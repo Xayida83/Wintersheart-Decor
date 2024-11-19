@@ -1,12 +1,14 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.mjs",
+    "dev": "nodemon server.mjs",
+    "db-start": "npx json-server db.json --port 3000"
   },
   "keywords": [],
-  "author": "",
+  "author": "Lotta",
   "license": "ISC",
   "description": "",
   "dependencies": {
