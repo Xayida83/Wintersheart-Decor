@@ -1,6 +1,7 @@
+import dotenv from 'dotenv';
 import { itemModel } from "../models/ItemModel.mjs";
 import { productModel } from "../models/productsModel.mjs";
-import dotenv from 'dotenv';
+import { fetchData } from "../utilities/httpClients.mjs";
 
 dotenv.config();
 
@@ -8,8 +9,7 @@ const BASE_URL = process.env.JSON_SERVER_BASE_URL;
 
 export const listProducts = async (req, res) => {
   try {
-    const response = await fetch(`${BASE_URL}/products`);
-    const result = await response.json();
+    const result = await fetchData('products');
 
     const items = [];
     result.map((product) => {
@@ -35,9 +35,8 @@ export const listProducts = async (req, res) => {
 export const getProductById = async (req, res) => {
   const param = req.params.id
   try {
-    const response = await fetch(`${BASE_URL}/products/${param}`);
-    const result = await response.json();
-
+    const result = await fetchData(`products/${param}`);
+    
     const item = new itemModel(
       result.id,
       result.name,
