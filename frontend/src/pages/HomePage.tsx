@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchData } from "../utils/httpClient";
-import ListComponent from "../components/ListComponent/ListComponent";
+import ListComponent from "../components/List/ListComponent";
 
 function HomePage() {
   const [products, setProducts] = useState([]);
