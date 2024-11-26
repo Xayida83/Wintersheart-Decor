@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './Item.module.css';
 
 type ItemProps = {
@@ -9,13 +10,15 @@ type ItemProps = {
 
 function Item({ id, name, price, imageUrl }: ItemProps) {
   return (
-    <div className={styles.card} data-testid={`item-${id}`}>
-      <img src={imageUrl} alt={name} />
-      <div className={styles['card-body']}>
-        <h3>{name}</h3>
-        <p>{price} kr</p>
+    <Link to={`/itemdetails/${id}`} className={styles.card}>
+      <div className={styles.imageWrapper}>
+        <img src={imageUrl} alt={name} className={styles.image} />
+        <div className={styles.overlay}>
+          <h3 className={styles.title}>{name}</h3>
+          <p className={styles.price}>{price} kr</p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
