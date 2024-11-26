@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { fetchData } from "../utils/httpClient";
 import ListComponent from "../components/List/ListComponent";
+import { Bird } from "../components/Bird/Bird";
+import { Header } from "../components/Header/Header";
+import styles from "./homePage.module.css";
 
 function HomePage() {
   const [products, setProducts] = useState([]);
@@ -20,7 +23,10 @@ function HomePage() {
 
   return (
     <div>
-      <h1>Products</h1>
+      <div className={styles.headerdiv}>
+        <Bird />
+        <Header title='Wintersheart Decor' />
+      </div>
       <ListComponent products={products} />
     </div>
   );

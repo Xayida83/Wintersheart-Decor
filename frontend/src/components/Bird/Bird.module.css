@@ -1,0 +1,165 @@
+:root {
+  --body: #ff533e;
+  --mouth: #000000;
+  --feather: #939393;
+  --beak-top: #080808;
+  --beak-down: #aa4c21;
+  --leg: #a0daf1;
+  --body-color: #e3edf7;
+}
+
+.container {
+  width: 200px; 
+  height: 142px; 
+  position: relative;
+  margin: 20px 0 0 0;
+}
+
+.body,  .mouth,  .feather,  .tail, .beak, .mouth::before, .mouth::after, .leg, .leg::after, .leg::before {
+  position: absolute;
+}
+.body,  .mouth, .feather, .beak, .mouth::before, .mouth::after  {
+  border-radius: 50%;
+}
+.body {
+  top: 13px; 
+  left: 25px; 
+  height: 90px; 
+  width: 100px; 
+  transform: rotate(-17deg);
+  background: linear-gradient(to bottom, transparent 0%, transparent 20%, var(--body) 20%);
+  z-index: 2;
+}
+
+.mouth {    
+  background:  var(--mouth);
+  top: 10px; 
+  left: -87.5px; 
+  width: 50px; 
+  height: 50px; 
+  transform: rotate(-17deg);
+  z-index: 5;
+  animation: animate-mouth 1.5s forwards;
+  animation-delay: 2s;
+}
+
+@keyframes animate-mouth {
+  100% {
+      left: 87.5px; 
+  }
+}
+.mouth::before {
+  content: "";
+  width: 15px; 
+  height: 15px; 
+  background: white;
+  position: absolute;
+  top: 10px; 
+  left: 20px; 
+}
+.mouth::after {
+  content: "";
+  width: 5px; 
+  height: 5px; 
+  background: black;
+  position: absolute;
+  top: 15px; 
+  left: 27.5px; 
+  animation: animate-eye 1s infinite;
+  animation-delay: 4s;
+}
+
+@keyframes animate-eye {
+  50% {
+      height: 2.5px; 
+  }
+}
+
+.feather {
+  z-index: 4;
+  left: 22px; 
+  top: -103px; 
+  width: 75px; 
+  height: 75px; 
+  background: linear-gradient(to bottom, transparent 0%, transparent 50%, var(--feather) 50%);
+  transform: rotate(-17deg);
+  animation: animate-feather 1.5s forwards;
+  animation-delay: 2s;
+}
+
+@keyframes animate-feather {
+  100% {
+      top: -3px; 
+  }
+}
+
+.tail {
+  width: 75px; 
+  height: 30px; 
+  background-color: var(--mouth);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+  top: 46px; 
+  left: 162px; 
+  transform: rotate(-17deg);
+  z-index: 3;
+  animation: animate-tail 1.5s forwards;
+  animation-delay: 2s;
+}
+@keyframes animate-tail {
+  100% {
+      left: -12px; 
+  }
+}
+.beak {
+  height: 50px; 
+  width: 50px; 
+  background: linear-gradient(to bottom, var(--beak-top) 0%, var(--beak-top) 15%, transparent 15% );
+  left: 112px; 
+  top: 120px; 
+  z-index: 2; /* Ändrat från -1 till 2 för att bevara näbben */
+  transform: rotate(-17deg);
+  animation: animate-beak 1.5s forwards;
+  animation-delay: 2s;
+}
+@keyframes animate-beak {
+  100% {
+      top: 20px; 
+  }
+}
+.leg {
+  background: var(--leg);
+  height: 25px; 
+  width: 5px; 
+  border-radius: 10px;
+  top: 257.5px; 
+  left: 62.5px; 
+  transform: rotate(-15deg);
+  z-index: 1;
+  animation: animate-leg 1.5s forwards;
+  animation-delay: 2s;
+}
+@keyframes animate-leg {
+  100% {
+      top: 107.5px; 
+  }
+}
+.leg::before {
+  bottom: -4px; 
+  content: "";
+  width: 20px; 
+  height: 4.5px; 
+  background: var(--leg);
+  border-radius: 10px;
+  transform: rotate(15deg);
+  z-index: -1;
+}
+.leg::after {
+  top: -4px; 
+  content: "";
+  width: 15px; 
+  height: 4.5px; 
+  background: var(--leg);
+  border-radius: 10px;
+  transform: rotate(-15deg);
+  z-index: -1;
+}
