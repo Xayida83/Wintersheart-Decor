@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { fetchData } from "../utils/httpClient";
 import ListComponent from "../components/List/ListComponent";
 import { Bird } from "../components/Bird/Bird";
 import { Header } from "../components/Header/Header";
 import styles from "./homePage.module.css";
+import { fetchData } from "../utilities/fetchData";
 
 function HomePage() {
   const [products, setProducts] = useState([]);
