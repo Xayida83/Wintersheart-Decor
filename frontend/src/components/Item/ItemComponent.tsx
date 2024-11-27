@@ -15,7 +15,7 @@ function Item({ id, name, price, imageUrl }: ItemProps) {
         <img src={imageUrl} alt={name} className={styles.image} />
         <div className={styles.overlay}>
           <h3 className={styles.title}>{name}</h3>
-          <p className={styles.price}>{price} kr</p>
+          <p className={styles.price}>${price}</p>
         </div>
       </div>
     </Link>

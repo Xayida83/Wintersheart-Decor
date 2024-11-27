@@ -5,3 +5,9 @@
   padding: 17px;
   margin: 0;
 }
+
+@media (min-width: 1024px) {
+  .title {
+    margin-top: 38px;
+  }
+ }
