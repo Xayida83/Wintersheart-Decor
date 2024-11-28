@@ -1,10 +1,24 @@
+:root {
+  --font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;; 
+  --font-size-base: 23px; /* Basstorlek för text */
+}
+
 body{
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
   background-color: cadetblue;
-  margin: 0;
+  margin: 0 0 4rem 0;
 }
 
 main {
   display: flex;
   flex-flow: row wrap;
   margin: 1rem;
+}
+
+
+@media (min-width: 1024px) {
+  :root {
+    --font-size-base: 25px;
+  }
 }
