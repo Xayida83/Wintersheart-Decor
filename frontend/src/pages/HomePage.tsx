@@ -4,22 +4,32 @@ import { Bird } from "../components/Bird/Bird";
 import { Header } from "../components/Header/Header";
 import styles from "./homePage.module.css";
 import { fetchData } from "../utilities/fetchData";
+import { Product } from "../types/Product";
+import FeedbackMessage from "../components/FeedbackMessage/FeedbackMessage";
 
 function HomePage() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const getProducts = async () => {
+    const fetchProducts  = async () => {
       try {
-        const data = await fetchData('products');
-        setProducts(data.result.data);
-      } catch (error) {
-        console.error('Error fetching products:', error);
+        const data: Product[] = await fetchData<Product[]>('products');
+        console.log(data);
+        setProducts(data);
+      } catch (err) {
+        setError('Failed to load products.');
+      } finally {
+        setLoading(false);
       }
     };
 
-    getProducts();
+    fetchProducts ();
   }, []);
+
+  if (loading) return <FeedbackMessage type='loading'/>;
+  if (error) return <FeedbackMessage type='error'/>;
 
   return (
     <div>

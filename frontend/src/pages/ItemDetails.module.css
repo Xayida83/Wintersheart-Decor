@@ -38,11 +38,6 @@
   background-color: #5c81aa;
 }
 
-.errormsg{
-  margin-top: 100px;
-  color: red;
-  font-size: 30px;
-}
 
 @media (min-width: 735px) {
   .container {

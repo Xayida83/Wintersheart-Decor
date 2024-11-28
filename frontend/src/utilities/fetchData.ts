@@ -1,15 +1,16 @@
 import httpClient from "./httpClient";
 
-export const fetchData = async (endpoint: string) => {
+export const fetchData = async <T>(endpoint: string): Promise<T> => {
   try {
     const response = await httpClient.get(`/${endpoint}`);
-    return response.data;
+    const { data } = response;
+    return (data.result?.data || data) as T;
   } catch (error: any) {
-    console.error(`An error occurred in fetchData: ${error.message}`)
-    throw new Error(
-      error.response
-        ? `Error fetching data: ${error.response.status} - ${error.response.statusText}`
-        : 'Network error'
-    );
+    console.error(`Failed to fetch data from ${endpoint}: ${error.message}`);
+    throw new Error('Data fetch failed');
   }
 };
+
+//* <T> 
+//*Med generiska typer kan samma funktion hantera flera olika typer av data utan att behöva skrivas om.
+//*I detta fall kan fetchData hämta både en lista med produkter (Product[]) och en enskild produkt (Product).

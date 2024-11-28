@@ -1,44 +1,44 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './ItemDetails.module.css';
-import { getProductById } from '../utilities/fetchItem';
 import { Button } from '../components/Button/Button';
 import { Header } from '../components/Header/Header';
+import { DetailedProduct} from '../types/Product';
+import FeedbackMessage from '../components/FeedbackMessage/FeedbackMessage';
+import { fetchData } from '../utilities/fetchData';
 
-type Product = {
-  id: number;
-  name: string;
-  price: number;
-  stock: number;
-  description: string;
-  imageUrl: string;
-};
-
-const ItemDetailsPage: React.FC = () => {
+const ItemDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
-  const [product, setProduct] = useState<Product | null>(null);
-  // const [loading, setLoading] = useState<boolean>(true);
+  const [product, setProduct] = useState<DetailedProduct | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const getItem = async () => {
       try {
-        const response = await getProductById(id!);
-        console.log(response.result);
-        setProduct(response.result);
+        const product: DetailedProduct = await fetchData<DetailedProduct>(`products/${id}`);
+        setProduct(product);
       } catch (err) {
         setError('Failed to load product details.');
-      } 
-      // finally {
+      } finally {
+        setLoading(false);
+      }
+      // try {
+      //   const response = await getProductById(id!);
+      //   console.log(response.result);
+      //   setProduct(response.result);
+      // } catch (err) {
+      //   setError('Failed to load product details.');
+      // } finally {
       //   setLoading(false);
       // }
     };
     getItem();
   }, [id]);
 
-  // if (loading) return <p className={styles.errormsg}>Loading...</p>;
-  if (error) return <p className={styles.errormsg}>{error}</p>;
-  if (!product) return <p className={styles.errormsg}>Product not found.</p>;
+  if (loading) return <FeedbackMessage type='loading'/>;
+  if (error) return <FeedbackMessage type='error'/>;
+  if (!product) return <FeedbackMessage type='error'/>;
 
   const handleAddToCart = () => {
     // Lägg till i kundkorgen (implementera logik)

@@ -1,12 +1,6 @@
 import ItemComponent from "../Item/ItemComponent";
 import styles from './List.module.css';
-
-type Product = {
-  id: number;
-  name: string;
-  price: number;
-  imageUrl: string;
-};
+import { Product } from "../../types/Product";
 
 type ListProps = {
   products: Product[];
