@@ -40,7 +40,7 @@
   transform: rotate(-17deg);
   z-index: 5;
   animation: animate-mouth 1.5s forwards;
-  animation-delay: 2s;
+  animation-delay: 0.5s;
 }
 
 @keyframes animate-mouth {
@@ -84,7 +84,7 @@
   background: linear-gradient(to bottom, transparent 0%, transparent 50%, var(--feather) 50%);
   transform: rotate(-17deg);
   animation: animate-feather 1.5s forwards;
-  animation-delay: 2s;
+  animation-delay: 0.5s;
 }
 
 @keyframes animate-feather {
@@ -103,7 +103,7 @@
   transform: rotate(-17deg);
   z-index: 3;
   animation: animate-tail 1.5s forwards;
-  animation-delay: 2s;
+  animation-delay: 0.5s;
 }
 @keyframes animate-tail {
   100% {
@@ -119,7 +119,7 @@
   z-index: 2; /* Ändrat från -1 till 2 för att bevara näbben */
   transform: rotate(-17deg);
   animation: animate-beak 1.5s forwards;
-  animation-delay: 2s;
+  animation-delay: 0.5s;
 }
 @keyframes animate-beak {
   100% {
@@ -136,7 +136,7 @@
   transform: rotate(-15deg);
   z-index: 1;
   animation: animate-leg 1.5s forwards;
-  animation-delay: 2s;
+  animation-delay: 0.5s;
 }
 @keyframes animate-leg {
   100% {

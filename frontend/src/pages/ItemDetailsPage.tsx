@@ -17,6 +17,7 @@ const ItemDetailsPage = () => {
     const getItem = async () => {
       try {
         const product: DetailedProduct = await fetchData<DetailedProduct>(`products/${id}`);
+        console.log(product);
         setProduct(product);
       } catch (err) {
         setError('Failed to load product details.');
