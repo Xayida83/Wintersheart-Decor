@@ -1,14 +1,9 @@
 import { Link } from 'react-router-dom';
 import styles from './Item.module.css';
+import { Product } from '../../types/Product';
 
-type ItemProps = {
-  id:number;
-  name: string;
-  price: number;
-  imageUrl: string;
-};
 
-function Item({ id, name, price, imageUrl }: ItemProps) {
+function Item({ id, name, price, imageUrl }: Product) {
   return (
     <Link to={`/itemdetails/${id}`} className={styles.card}>
       <div className={styles.imageWrapper}>

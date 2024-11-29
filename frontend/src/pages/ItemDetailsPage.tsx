@@ -6,6 +6,7 @@ import { Header } from '../components/Header/Header';
 import { DetailedProduct} from '../types/Product';
 import FeedbackMessage from '../components/FeedbackMessage/FeedbackMessage';
 import { fetchData } from '../utilities/fetchData';
+import { addToCart } from '../utilities/cartUtils';
 
 const ItemDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -24,15 +25,6 @@ const ItemDetailsPage = () => {
       } finally {
         setLoading(false);
       }
-      // try {
-      //   const response = await getProductById(id!);
-      //   console.log(response.result);
-      //   setProduct(response.result);
-      // } catch (err) {
-      //   setError('Failed to load product details.');
-      // } finally {
-      //   setLoading(false);
-      // }
     };
     getItem();
   }, [id]);
@@ -42,8 +34,10 @@ const ItemDetailsPage = () => {
   if (!product) return <FeedbackMessage type='error'/>;
 
   const handleAddToCart = () => {
-    // Lägg till i kundkorgen (implementera logik)
-    alert(`${product.name} has been added to your cart!`);
+    if (product) {
+      addToCart(product);
+      alert(`${product.name} has been added to your cart!`);
+    }
   };
 
   return (
