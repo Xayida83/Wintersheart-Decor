@@ -39,7 +39,7 @@ export const CartPage = () => {
               <h2>{item.name}</h2>
               <p>Price: ${item.totalPrice}</p>
               <p>Quantity: {item.quantity}</p>
-              <Button onClick={() => handleRemove(item.id)} className={styles.removeButton}>
+              <Button onClick={() => handleRemove(item.id)} className={styles.removeButton} type="reset">
                 Remove
               </Button>
             </div>
@@ -47,7 +47,7 @@ export const CartPage = () => {
         ))}
       </ul>
       <h2>Total: ${calculateTotal()}</h2> 
-      <Button onClick={handleClearCart} className={styles.clearCartButton}>
+      <Button onClick={handleClearCart} className={styles.clearCartButton} type="reset">
         Clear Cart
       </Button>
     </div>

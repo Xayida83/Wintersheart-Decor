@@ -46,7 +46,7 @@ const ItemDetailsPage = () => {
         <Header title={product.name} />
         <img src={product.imageUrl} alt={product.name} className={styles.image} />
         <div className={styles.buttonDiv}>
-          <Button onClick={handleAddToCart} className={styles.addToCartButton} type='button'>
+          <Button onClick={handleAddToCart} className={styles.addToCartButton} type='submit'>
             Add to Cart
           </Button>
         </div>

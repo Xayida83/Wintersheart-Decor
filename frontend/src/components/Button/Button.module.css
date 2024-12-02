@@ -1,0 +1,46 @@
+/* Styling för submit-knappen */
+.addButton {
+  background-color: #791242;
+  color: white;
+  border:  solid white 2px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.addButton:hover {
+  background-color: rgb(143, 94, 94);
+}
+
+/* Styling för reset-knappen */
+.removeButton {
+  background-color: red;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.removeButton:hover {
+  background-color: darkred;
+}
+
+/* Standardstil för vanliga knappar */
+.button {
+  background-color: #853a5d;
+  color: white;
+  border: solid white 2px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: rgb(143, 94, 94);
+}
