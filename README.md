@@ -58,8 +58,8 @@ The following middleware is used:
 
 The dotenv package is used to manage environment variables, such as: 
 
-JSON_SERVER_BASE_URL: The base URL for the mock API.
-PORT: The port on which the backend server runs.
+- JSON_SERVER_BASE_URL: The base URL for the mock API.
+- PORT: The port on which the backend server runs.
 
 ___
 ## Why JSON-Server?
