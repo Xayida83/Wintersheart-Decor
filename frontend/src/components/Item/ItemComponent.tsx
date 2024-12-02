@@ -9,7 +9,7 @@ function Item({ id, name, price, imageUrl }: Product) {
       <div className={styles.imageWrapper}>
         <img src={imageUrl} alt={name} className={styles.image} />
         <div className={styles.overlay}>
-          <h3 className={styles.title}>{name}</h3>
+          <p className={styles.title}>{name}</p>
           <p className={styles.price}>${price}</p>
         </div>
       </div>
