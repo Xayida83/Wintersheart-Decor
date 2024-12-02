@@ -18,6 +18,7 @@
   /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
   font-size: 30px;
   padding: 1rem;
+  cursor: pointer;
 }
 
 @media (min-width: 1024px) {

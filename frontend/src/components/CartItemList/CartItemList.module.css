@@ -1,0 +1,45 @@
+.cartList {
+  list-style: none;
+  padding: 0;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+.cartItem img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.cartInfo {
+  display: flex
+  ;
+      flex-flow: row wrap;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+
+  p {
+    margin: 0;
+  }
+}
+
+.itemLink {
+  text-decoration: none;
+  color: black;
+}
+
+.itemLink:hover {
+  text-decoration: underline; /* Understrykning vid hover */
+  color: #718396; /* Ändra färg vid hover */
+}

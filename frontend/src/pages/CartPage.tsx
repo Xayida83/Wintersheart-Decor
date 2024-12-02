@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Button } from "../components/Button/Button";
 import { clearCart, getCartItems, removeFromCart, CartItem } from "../utilities/cartUtils";
 import styles from './Cart.module.css';
-
-
+import { CartItemList } from "../components/CartItemList/CartItemList";
+import { Header } from "../components/Header/Header";
 
 export const CartPage = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>(getCartItems());
@@ -30,24 +30,11 @@ export const CartPage = () => {
 
   return (
     <div className={styles.cartContainer}>
-      <h1>Your Cart</h1>
-      <ul className={styles.cartList}>
-        {cartItems.map((item) => (
-          <li key={item.id} className={styles.cartItem}>
-            <img src={item.imageUrl} alt={item.name} />
-            <div>
-              <h2>{item.name}</h2>
-              <p>Price: ${item.totalPrice}</p>
-              <p>Quantity: {item.quantity}</p>
-              <Button onClick={() => handleRemove(item.id)} className={styles.removeButton} type="reset">
-                Remove
-              </Button>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <Header title="Your Cart"/>
+      <CartItemList items={cartItems} onRemove={handleRemove} />
       <h2>Total: ${calculateTotal()}</h2> 
-      <Button onClick={handleClearCart} className={styles.clearCartButton} type="reset">
+      <Button className={styles.button} type="submit">Checkout</Button>
+      <Button onClick={handleClearCart} className={styles.button} type="reset">
         Clear Cart
       </Button>
     </div>

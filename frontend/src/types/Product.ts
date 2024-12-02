@@ -10,3 +10,7 @@ export type DetailedProduct = Product & {
   description: string;
 };
 
+export type CartItem = Product & {
+  totalPrice: number;
+  quantity: number;
+}
