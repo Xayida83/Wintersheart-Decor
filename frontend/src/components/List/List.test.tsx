@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import ListComponent from './ListComponent';
+import { ListComponent } from './ListComponent';
 import { describe, it, expect } from 'vitest';
 
 describe('ListComponent', () => {
