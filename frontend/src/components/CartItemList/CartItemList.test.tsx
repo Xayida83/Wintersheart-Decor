@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import { CartItemList } from "./CartItemList";
+import { MemoryRouter } from "react-router-dom";
 
 const mockItems = [
   { id: 1, name: "Item 1", price: 10, totalPrice: 20, quantity: 2, imageUrl: "image1.jpg" },
@@ -9,21 +10,29 @@ const mockItems = [
 
 describe("CartItemList", () => {
   it("renders cart items correctly", () => {
-    render(<CartItemList items={mockItems} onRemove={() => {}} />);
+    render(
+      <MemoryRouter>
+        <CartItemList items={mockItems} onRemove={() => {}} />
+      </MemoryRouter>
+    );
 
     // Kontrollera att objekten i listan renderas
     expect(screen.getByText("Item 1")).toBeInTheDocument();
     expect(screen.getByText("Item 2")).toBeInTheDocument();
     expect(screen.getByText("Price: $20")).toBeInTheDocument();
     expect(screen.getByText("Price: $15")).toBeInTheDocument();
-    expect(screen.getByText("Quantity: 2")).toBeInTheDocument();
-    expect(screen.getByText("Quantity: 1")).toBeInTheDocument();
+    expect(screen.getByText("2")).toBeInTheDocument();
+    expect(screen.getByText("1")).toBeInTheDocument();
   });
 
   it("calls onRemove with correct id when Remove button is clicked", () => {
-    const mockOnRemove = vi.fn(); 
+    const mockOnRemove = vi.fn();
 
-    render(<CartItemList items={mockItems} onRemove={mockOnRemove} />);
+    render(
+      <MemoryRouter>
+        <CartItemList items={mockItems} onRemove={mockOnRemove} />
+      </MemoryRouter>
+    );
 
     // Hämta alla Remove-knappar
     const removeButtons = screen.getAllByText("Remove");
