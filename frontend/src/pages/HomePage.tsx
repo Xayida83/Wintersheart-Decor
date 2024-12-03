@@ -16,7 +16,6 @@ export const HomePage = () => {
     const fetchProducts  = async () => {
       try {
         const data: Product[] = await fetchData<Product[]>('products');
-        console.log(data);
         setProducts(data);
       } catch (err) {
         setError('Failed to load products.');
