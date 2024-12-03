@@ -7,7 +7,7 @@ type ButtonProps = {
   className?: string;
 };
 
-export const Button: React.FC<ButtonProps> = ({ children, onClick, className, type = 'button' }) => {
+export const Button= ({ children, onClick, className, type = 'button' }: ButtonProps)  => {
   // Dynamisk klass baserat på type
   let typeClass = '';
 

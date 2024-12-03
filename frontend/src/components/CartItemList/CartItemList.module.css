@@ -40,6 +40,6 @@
 }
 
 .itemLink:hover {
-  text-decoration: underline; /* Understrykning vid hover */
-  color: #718396; /* Ändra färg vid hover */
+  text-decoration: underline; 
+  color: #718396; 
 }

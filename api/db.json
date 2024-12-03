@@ -71,7 +71,7 @@
       "description": "A 12-inch Santa Claus figurine.",
       "stock": 12,
       "category": "Decorations",
-      "imageUrl": "https://shop.cramersblommor.com/jul/tomte-djur-figurer/tomte-rod-10x20x30cm/?gad_source=1&gclid=CjwKCAiAudG5BhAREiwAWMlSjMV3lSqtmRSGR-PH4N4bu1Yo903LZndF9ksI7eYMDA1-VOtI5CNEKhoCct0QAvD_BwE"
+      "imageUrl": "https://images.clasohlson.com/medias/sys_master/h6f/ha9/68467734249502.jpg"
     },
     {
       "id": 9,
@@ -89,7 +89,7 @@
       "description": "A set of three Christmas-scented candles.",
       "stock": 22,
       "category": "Candles",
-      "imageUrl": "https://cdn1.jysk.com/getimage/wd3.large/129338"
+      "imageUrl": "https://assets.holyart.it/images/PR000336/en/500/R/SN059774/CLOSEUP01_HD/h-a1c9d6f1/red-advent-candle-set-of-4.jpg"
     },
     {
       "id": 11,
@@ -152,7 +152,7 @@
       "description": "A red and white Christmas tree skirt.",
       "stock": 25,
       "category": "Decorations",
-      "imageUrl": "https://raw.githubusercontent.com/Xayida83/e-commerce/refs/heads/main/src/assets/christmas_mat.webp"
+      "imageUrl": "https://images.fyndiq.se/images/f_auto/t_600x600/prod/1efe1166c59e4ea2/fab2b19e799a/christmas-tree-skirt-christmas-tree-knit-tree-skirt-christmas"
     },
     {
       "id": 18,
@@ -188,7 +188,7 @@
       "description": "Set of 6 elegant champagne flutes, perfect for New Year's toasts.",
       "stock": 30,
       "category": "Glassware",
-      "imageUrl": "https://via.placeholder.com/150"
+      "imageUrl": "https://www.kitchentime.se/assets/blobs/scandi-living-karlevi-champagneglas-4-pack-21-cl/37095-01-01-8763ffa40b.jpg?preset=medium"
     },
     {
       "id": 22,
@@ -197,7 +197,7 @@
       "description": "A pack of 10 colorful party hats with glitter details.",
       "stock": 50,
       "category": "Party Supplies",
-      "imageUrl": "https://via.placeholder.com/150"
+      "imageUrl": "https://static.partyking.org/fit-in/1300x0/products/original/partyhattar-metallic-flerfargade-1.jpg"
     },
     {
       "id": 23,
@@ -206,7 +206,7 @@
       "description": "Pack of 3 confetti cannons for a festive New Year's celebration.",
       "stock": 40,
       "category": "Party Supplies",
-      "imageUrl": "https://via.placeholder.com/150"
+      "imageUrl": "https://static.partyking.org/fit-in/1300x0/products/original/konfettikanon-blagul-84844-1.jpg"
     },
     {
       "id": 24,
@@ -215,7 +215,7 @@
       "description": "A mix of 20 balloons in black, gold, and silver with \"Happy New Year\" text.",
       "stock": 60,
       "category": "Decorations",
-      "imageUrl": "https://via.placeholder.com/150"
+      "imageUrl": "https://static.partyking.org/fit-in/1300x0/products/original/ballongbukett-svartguldsilver-91442-1.jpg"
     },
     {
       "id": 25,
@@ -224,7 +224,7 @@
       "description": "10-meter LED string lights for a festive atmosphere.",
       "stock": 25,
       "category": "Decorations",
-      "imageUrl": "https://via.placeholder.com/150"
+      "imageUrl": "https://assets.ellosgroup.com/i/ellos/b?$jg$&$jm$&$jp$&$jd$&n=jot_1523397-01_Fs&mw=644&fmt=webp"
     },
     {
       "id": 26,
@@ -233,43 +233,7 @@
       "description": "Set of 12 plastic champagne glasses, perfect for parties.",
       "stock": 35,
       "category": "Glassware",
-      "imageUrl": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 27,
-      "name": "Countdown Clock",
-      "price": 20,
-      "description": "A digital clock to help countdown to the New Year.",
-      "stock": 15,
-      "category": "Decorations",
-      "imageUrl": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 28,
-      "name": "New Year Banner",
-      "price": 8,
-      "description": "A \"Happy New Year\" banner in gold and black.",
-      "stock": 40,
-      "category": "Decorations",
-      "imageUrl": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 29,
-      "name": "Sparkling Cider",
-      "price": 12,
-      "description": "Non-alcoholic sparkling cider, perfect for toasting.",
-      "stock": 30,
-      "category": "Beverages",
-      "imageUrl": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 30,
-      "name": "Table Confetti",
-      "price": 5,
-      "description": "Gold and silver star-shaped table confetti for decoration.",
-      "stock": 50,
-      "category": "Party Supplies",
-      "imageUrl": "https://via.placeholder.com/150"
-    }    
+      "imageUrl": "https://images.clasohlson.com/medias/sys_master/h7c/hc6/68452422615070.jpg"
+    }  
   ]
 }

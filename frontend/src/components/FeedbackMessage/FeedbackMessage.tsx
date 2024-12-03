@@ -4,7 +4,7 @@ type FeedbackMessageProps = {
   type: 'error' | 'loading'; // Typ för att ange vilken typ av meddelande som ska visas
 };
 
-const FeedbackMessage = ({ type }: FeedbackMessageProps) => {
+export const FeedbackMessage = ({ type }: FeedbackMessageProps) => {
   const messages = {
     loading: 'Loading, please wait...',
     error: 'Something went wrong. Please try again later.',
@@ -15,4 +15,3 @@ const FeedbackMessage = ({ type }: FeedbackMessageProps) => {
   return <p className={className}>{messages[type]}</p>;
 };
 
-export default FeedbackMessage;

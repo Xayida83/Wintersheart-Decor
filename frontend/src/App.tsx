@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from './layouts/Layout';
-import  ItemDetailsPage from './pages/ItemDetailsPage';
+import { ItemDetailsPage } from './pages/ItemDetailsPage';
 import { CartPage } from './pages/CartPage';
-import HomePage from './pages/HomePage';
+import { HomePage } from './pages/HomePage';
 
 
 function App() {
