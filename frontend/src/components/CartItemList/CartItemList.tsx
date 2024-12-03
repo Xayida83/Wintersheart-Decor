@@ -8,7 +8,7 @@ type CartItemListProps = {
   onRemove: (id: number) => void;
 };
 
-export const CartItemList: React.FC<CartItemListProps> = ({ items, onRemove }) => {
+export const CartItemList = ({ items, onRemove }: CartItemListProps) => {
   return (
     <ul className={styles.cartList}>
       {items.map((item) => (

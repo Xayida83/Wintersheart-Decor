@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import ListComponent from "../components/List/ListComponent";
+import { ListComponent } from "../components/List/ListComponent";
 import { Bird } from "../components/Bird/Bird";
 import { Header } from "../components/Header/Header";
 import styles from "./homePage.module.css";
 import { fetchData } from "../utilities/fetchData";
 import { Product } from "../types/Product";
-import FeedbackMessage from "../components/FeedbackMessage/FeedbackMessage";
+import { FeedbackMessage } from "../components/FeedbackMessage/FeedbackMessage";
 
-function HomePage() {
+export const HomePage = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -41,5 +41,3 @@ function HomePage() {
     </div>
   );
 }
-
-export default HomePage;

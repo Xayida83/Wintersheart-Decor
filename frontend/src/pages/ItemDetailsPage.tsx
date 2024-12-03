@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import styles from './ItemDetails.module.css';
 import { Button } from '../components/Button/Button';
 import { Header } from '../components/Header/Header';
 import { DetailedProduct} from '../types/Product';
-import FeedbackMessage from '../components/FeedbackMessage/FeedbackMessage';
+import { FeedbackMessage } from '../components/FeedbackMessage/FeedbackMessage';
 import { fetchData } from '../utilities/fetchData';
 import { addToCart } from '../utilities/cartUtils';
+import styles from './ItemDetails.module.css';
 
-const ItemDetailsPage = () => {
+export const ItemDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
   const [product, setProduct] = useState<DetailedProduct | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -60,5 +60,3 @@ const ItemDetailsPage = () => {
     </div>
   );
 };
-
-export default ItemDetailsPage;

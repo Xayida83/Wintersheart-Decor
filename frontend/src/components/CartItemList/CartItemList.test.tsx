@@ -21,7 +21,7 @@ describe("CartItemList", () => {
   });
 
   it("calls onRemove with correct id when Remove button is clicked", () => {
-    const mockOnRemove = vi.fn(); // Mocka onRemove-funktionen
+    const mockOnRemove = vi.fn(); 
 
     render(<CartItemList items={mockItems} onRemove={mockOnRemove} />);
 

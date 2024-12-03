@@ -25,9 +25,9 @@
 
 @media (min-width: 735px) {
   .container {
-    width: 50%;
+    width: 100%;
   }
   .info {
-    width: 41%;
+    width: 50%;
   }
 }

@@ -1,12 +1,12 @@
-import ItemComponent from "../Item/ItemComponent";
 import styles from './List.module.css';
 import { Product } from "../../types/Product";
+import { ItemComponent } from '../Item/ItemComponent';
 
 type ListProps = {
   products: Product[];
 };
 
-function ListComponent({ products }: ListProps) {
+export const ListComponent = ({ products }: ListProps) => {
   return (
     <div className={styles['list-grid']}>
       {products.map((product) => (
@@ -21,5 +21,3 @@ function ListComponent({ products }: ListProps) {
     </div>
   );
 }
-
-export default ListComponent;
