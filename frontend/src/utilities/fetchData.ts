@@ -4,7 +4,7 @@ export const fetchData = async <T>(endpoint: string): Promise<T> => {
   try {
     const response = await httpClient.get(`/${endpoint}`);
     const { data } = response;
-    return (data.result?.data || data) as T;
+    return (data.result?.data || data);
   } catch (error: any) {
     console.error(`Failed to fetch data from ${endpoint}: ${error.message}`);
     throw new Error('Data fetch failed');
