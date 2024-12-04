@@ -1,7 +1,7 @@
 import { Button } from "../Button/Button"
-import styles from './CartItemList.module.css';
 import { CartItem } from "../../types/Product";
 import { Link } from "react-router-dom";
+import styles from './CartItemList.module.css';
 
 type CartItemListProps = {
   items: CartItem[];

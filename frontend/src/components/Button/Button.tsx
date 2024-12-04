@@ -7,7 +7,7 @@ type ButtonProps = {
   className?: string;
 };
 
-export const Button= ({ children, onClick, className, type = 'button' }: ButtonProps)  => {
+export const Button = ({ children, onClick, className, type = 'button' }: ButtonProps)  => {
   // Dynamisk klass baserat på type
   let typeClass = '';
 

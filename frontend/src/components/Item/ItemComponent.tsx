@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import styles from './Item.module.css';
 import { Product } from '../../types/Product';
+import styles from './Item.module.css';
 
 export const ItemComponent = ({ id, name, price, imageUrl }: Product) => {
   return (

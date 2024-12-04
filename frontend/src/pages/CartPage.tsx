@@ -1,23 +1,26 @@
 import { useState } from "react";
 import { Button } from "../components/Button/Button";
 import { clearCart, getCartItems, removeFromCart, CartItem } from "../utilities/cartUtils";
-import styles from './Cart.module.css';
 import { CartItemList } from "../components/CartItemList/CartItemList";
 import { Header } from "../components/Header/Header";
+import styles from './Cart.module.css';
 
 export const CartPage = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>(getCartItems());
 
   const handleRemove = (id: number) => {
+    const confirmRemove = window.confirm("Are you sure you want to remove this item from your cart?");
+    if (!confirmRemove) return;
+
     removeFromCart(id);
     setCartItems(getCartItems());
-    alert('Item removed from cart!');
   };
 
   const handleClearCart = () => {
+    const confirmRemove = window.confirm("Are you sure you want to clear the cart?");
+    if (!confirmRemove) return;
     clearCart();
     setCartItems(getCartItems());
-    alert('Cart cleard!');
   };
 
   const calculateTotal = (): number => {

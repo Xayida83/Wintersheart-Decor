@@ -9,7 +9,8 @@
 .emptyCart {
   text-align: center;
   font-size: 1.5rem;
-  color: gray;
+  color: rgb(12, 12, 12);
+  margin-top: 6rem;
 }
 
 .button {

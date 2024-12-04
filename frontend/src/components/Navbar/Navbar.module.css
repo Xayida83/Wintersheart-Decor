@@ -21,6 +21,13 @@
   cursor: pointer;
 }
 
+.linkContainer {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  margin: 0 1rem 0 0;
+}
+
 @media (min-width: 1024px) {
   .navbar {
     position: fixed;
@@ -28,4 +35,4 @@
     gap: 3rem;
     justify-content: flex-end;
   }
- }
+}

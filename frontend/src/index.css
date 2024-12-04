@@ -6,7 +6,8 @@
 body{
   font-family: var(--font-family);
   font-size: var(--font-size-base);
-  background-color: cadetblue;
+  background: rgb(103,165,166);
+  background: linear-gradient(90deg, rgba(103,165,166,1) 23%, rgba(246,0,0,1) 100%);
   margin: 0 0 4rem 0;
 }
 

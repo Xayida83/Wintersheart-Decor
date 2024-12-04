@@ -34,19 +34,19 @@ describe("CartItemList", () => {
       </MemoryRouter>
     );
 
-    // Hämta alla Remove-knappar
+    //* Hämta alla Remove-knappar
     const removeButtons = screen.getAllByText("Remove");
 
-    // Klicka på första knappen
+    //* Klicka på första knappen
     fireEvent.click(removeButtons[0]);
 
-    // Kontrollera att onRemove anropades med rätt id
+    //* Kontrollera att onRemove anropades med rätt id
     expect(mockOnRemove).toHaveBeenCalledWith(1);
 
-    // Klicka på andra knappen
+    //* Klicka på andra knappen
     fireEvent.click(removeButtons[1]);
 
-    // Kontrollera att onRemove anropades med rätt id igen
+    //* Kontrollera att onRemove anropades med rätt id igen
     expect(mockOnRemove).toHaveBeenCalledWith(2);
   });
 });

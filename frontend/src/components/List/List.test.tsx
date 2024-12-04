@@ -16,8 +16,6 @@ describe('ListComponent', () => {
     );
 
     // Kontrollera att produkterna visas korrekt
-    // expect(screen.getByTestId('item-1')).toBeInTheDocument();
-    // expect(screen.getByTestId('item-2')).toBeInTheDocument();
     expect(screen.getByText('Product 1')).toBeInTheDocument();
     expect(screen.getByText('$10')).toBeInTheDocument();
     expect(screen.getByText('Product 2')).toBeInTheDocument();

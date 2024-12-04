@@ -8,9 +8,11 @@ export const Navbar = () => {
   
   return (
     <nav className={styles.navbar}>
-      <Link to="/" className={styles.link}>Home</Link>
-      <p onClick={() => navigate(-1)} className={styles.link}> Go Back</p>
-      <Link to="/cart" className={styles.link}>Cart</Link>
+      <div className={styles.linkContainer}>
+        <Link to="/" className={styles.link}>Home</Link>
+        <p onClick={() => navigate(-1)} className={styles.link}><span>❮</span> Go Back</p>
+        <Link to="/cart" className={styles.link}>Cart</Link>
+      </div>
     </nav>
   )
 }

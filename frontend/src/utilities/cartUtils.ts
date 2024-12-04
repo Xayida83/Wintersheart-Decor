@@ -11,7 +11,7 @@ export const addToCart = (product: Product) => {
   const existingItem = cart.find((item) => item.id === product.id);
 
   if (existingItem) {
-    //om varand finns, öka kvantiteten
+    //om varan finns, öka kvantiteten
     existingItem.quantity += 1;
     existingItem.totalPrice = existingItem.quantity * existingItem.price;
   } else {

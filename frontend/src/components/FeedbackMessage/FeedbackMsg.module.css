@@ -1,16 +1,16 @@
 
 .error {
   margin-top: 100px;
-  color: red;
+  color: rgb(6, 5, 5);
   text-align: center;
-  margin: 1rem;
+  margin-top: 6rem;
   font-size: 30px;
 }
 
 .loading {
   margin-top: 100px;
-  color: blue;
+  color: rgb(7, 7, 8);
   text-align: center;
-  margin: 1rem;
+  margin-top: 6rem;
   font-size: 30px;
 }

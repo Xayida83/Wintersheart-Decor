@@ -1,14 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import { Navbar } from "./Navbar";
-import { BrowserRouter as Router} from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 import { describe, expect, it } from "vitest";
 
 describe('Navbar Component', () => {
   it('renders all navigation links', () => {
     render(
-      <Router>
+      <MemoryRouter>
         <Navbar />
-      </Router>
+      </MemoryRouter>
     );
 
     const links = screen.getAllByRole('link');
