@@ -1,7 +1,8 @@
-# Wintersheart Decor Backend
+# Wintersheart Decor 
+## BACKEND
 The backend for the Wintersheart Decor project, built as a learning-focused implementation of an API using Node.js, following the MVC (Model-View-Controller) design pattern. The primary goal is to simulate working with a real API while reinforcing best practices for backend development.  
 ___
-## Project Purpose
+### Project Purpose
 The backend was developed with the following goals:
 
 **1. Simulating a real API:**
@@ -20,8 +21,8 @@ The backend was developed with the following goals:
 
   - Middleware, such as cors and express.json, is included to handle JSON parsing and avoid cross-origin issues.
   - .env files are used for managing environment variables, even though they are not strictly necessary for such a small-scale project.
-
-## Project Features
+___
+### Project Features
 **1. Mock API**
 
 I use JSON-server to simulate API interactions. The data is stored in a db.json file, and the API endpoints allow us to:
@@ -62,15 +63,15 @@ The dotenv package is used to manage environment variables, such as:
 - PORT: The port on which the backend server runs.
 
 ___
-## Why JSON-Server?
-We chose JSON-server to mock the backend API for the following reasons:
+### Why JSON-Server?
+I chose JSON-server to mock the backend API for the following reasons:
 
 - Simple Setup: It provides a quick and effective way to simulate an API without needing a full database or complex setup.
 - Frontend Integration: The mock API mimics the behavior of a real API, allowing frontend developers to work seamlessly as if they were connected to a live backend.
 - Learning Purpose: This approach helps learners understand API interactions and the importance of structuring backend data for frontend consumption.
 
 ___
-## Why MVC?
+### Why MVC?
 Even though this is a small-scale project, implementing the MVC pattern provides:
 
 - Separation of Concerns: Each layer has a distinct responsibility, making the code more organized and easier to maintain.
@@ -111,7 +112,106 @@ GET http://localhost:5010/api/products/1
 ```
 
 ___
-Next Steps
+### Next Steps
 - Integrate a database (e.g., SQLite or MongoDB) for a more realistic backend.
 - Add full CRUD operations (Create, Update, Delete) for products.
 - Implement authentication for secured routes.
+
+## FRONTEND
+
+The frontend for the Wintersheart Decor project is built using React and TypeScript, designed with a focus on modularity and testability. The application interacts with a backend API to fetch and display products, offering functionality like viewing product details and managing a shopping cart.
+___
+### Project Purpose
+The frontend was developed with the following goals:
+
+**1. Modular and Scalable Design:**
+  - Components are designed to be reusable and context-agnostic, ensuring that they can be easily extended for additional features.
+    
+**2. Integration with a Mock Backend:**
+  - The frontend consumes a JSON-server-powered backend API to simulate real-world API interactions.
+    
+**3. Focus on Test-Driven Development (TDD):**
+  - At least two components are rigorously tested using Vitest and React Testing Library to ensure functionality and reliability.
+    
+**4. Responsive and Accessible Design:**
+  - The application is styled using CSS modules to provide a clean and consistent look across devices, ensuring a responsive design for both mobile and desktop users.
+___
+### Key Features
+**1. Home Page**
+  - Displays a list of all products fetched from the backend.
+  - Each product is shown as a card with an image, name, and price.
+  - Clicking on a product navigates to its detailed view.
+    
+**2. Product Details Page**
+  - Shows detailed information about a selected product, including its description, stock availability, and price.
+  - Includes an "Add to Cart" button that updates the cart state.
+    
+**3. Shopping Cart**
+  - Displays all the items added to the cart.
+  - Shows total price and quantity for each item.
+  - Allows users to remove items or clear the cart entirely.
+    
+**4. Navbar**
+  - Provides navigation links to the home page and cart.
+  - Dynamically updates the cart count, showing the total number of items in the cart.
+    
+**5. Utilities for API Integration**
+  - A shared fetchData utility function simplifies API calls with error handling and consistent configuration.
+___
+
+### Setup Instructions
+**Install Dependencies**
+
+```bash
+npm install
+```
+
+Add Environment Variables Create a .env file in the root of the frontend directory and specify the base URL for the backend:
+
+```bash
+VITE_BASE_URL=http://localhost:5010/api
+```
+
+Start the Development Server Run the following command to start the application:
+```bash
+npm run dev
+```
+
+Run Tests Test the application components:
+```bash
+npm run test
+```
+___
+### Testing and TDD
+#### Tested Components
+**ListComponent**
+  - Ensures that a list of products is rendered correctly.
+  - Tests how the component handles empty product lists.
+    
+**CartItemList**
+  - Verifies that cart items are displayed accurately with their quantity and total price.
+  - Tests the "Remove" button functionality to ensure items are correctly removed from the cart.
+    
+**Testing Tools**
+  - Vitest: Used for running tests.
+  - React Testing Library: Used for simulating user interactions and testing DOM output.
+
+___
+### Next Steps
+**1. Enhance Product Filtering and Sorting**
+  - Add functionality for users to filter products by category or price range.
+    
+**2. Add Checkout Functionality**
+  - Implement a "Place Order" button that redirects to a mock checkout page.
+    
+**3. Improve Test Coverage**
+  - Add tests for all core components, including edge cases and error handling.
+    
+**4. Accessibility Improvements**
+  - Ensure the application adheres to WCAG guidelines for accessibility.
+    
+**5. Deploy Application**
+  - Host the frontend on a platform like Netlify or Vercel and connect it to the backend.
+
+With this frontend structure and functionality, Wintersheart Decor provides a clean and user-friendly shopping experience while offering a scalable foundation for future development. 🎄
+
