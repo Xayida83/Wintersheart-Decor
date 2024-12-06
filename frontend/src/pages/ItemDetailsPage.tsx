@@ -5,8 +5,9 @@ import { Header } from '../components/Header/Header';
 import { DetailedProduct} from '../types/Product';
 import { FeedbackMessage } from '../components/FeedbackMessage/FeedbackMessage';
 import { fetchData } from '../utilities/fetchData';
-import { addToCart } from '../utilities/cartUtils';
+// import { addToCart } from '../utilities/cartUtils';
 import styles from './ItemDetails.module.css';
+import { useCart } from '../context/CartContext';
 
 export const ItemDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -15,9 +16,9 @@ export const ItemDetailsPage = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const getItem = async () => {
+    const fetchProduct = async () => {
       try {
-        const product: DetailedProduct = await fetchData<DetailedProduct>(`products/${id}`);
+        const product = await fetchData<DetailedProduct>(`products/${id}`);
         setProduct(product);
       } catch (err) {
         setError('Failed to load product details.');
@@ -25,13 +26,14 @@ export const ItemDetailsPage = () => {
         setLoading(false);
       }
     };
-    getItem();
+    fetchProduct();
   }, [id]);
 
   if (loading) return <FeedbackMessage type='loading'/>;
   if (error) return <FeedbackMessage type='error'/>;
   if (!product) return <FeedbackMessage type='error'/>;
 
+  const { addToCart } = useCart();
   const handleAddToCart = () => {
     if (product) {
       addToCart(product);

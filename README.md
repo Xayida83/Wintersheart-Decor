@@ -162,19 +162,14 @@ ___
     
 **5. Utilities for API Integration**
   - A shared fetchData utility function simplifies API calls with error handling and consistent configuration.
+
+**6. Context API for Global State Management**
+  - Cart state is managed globally using the React Context API, making it accessible across components without prop drilling.
 ___
-
-### Setup Instructions
-**Install Dependencies**
+### Start frontend
 
 ```bash
-npm install
-```
-
-Add Environment Variables Create a .env file in the root of the frontend directory and specify the base URL for the backend:
-
-```bash
-VITE_BASE_URL=http://localhost:5010/api
+cd frontend
 ```
 
 Start the Development Server Run the following command to start the application:
