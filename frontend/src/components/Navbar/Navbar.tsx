@@ -14,7 +14,7 @@ export const Navbar = () => {
         <Link to="/" className={styles.link}>Home</Link>
         <p onClick={() => navigate(-1)} className={styles.link}><span>❮</span> Go Back</p>
         <Link to="/cart" className={styles.link}>
-        Cart {calculateCartQuantity() > 0 && <span>({calculateCartQuantity()})</span>}
+        Cart {calculateCartQuantity() > 0 && <span className={styles.number}>({calculateCartQuantity()})</span>}
         </Link>
       </div>
     </nav>
