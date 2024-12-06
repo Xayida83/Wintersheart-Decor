@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, ReactNode } from "react";
 import { CartItem } from "../types/Product";
 import { Product } from "../types/Product";
 
@@ -13,7 +13,11 @@ type CartContextType = {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+type CartProviderProps = {
+  children: ReactNode;
+};
+
+export const CartProvider = ({ children }: CartProviderProps) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   const addToCart = (product: Product) => {
@@ -43,17 +47,19 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     setCartItems([]);
   };
- 
+
   const calculateTotal = (): number => {
     return cartItems.reduce((sum, item) => sum + item.totalPrice, 0);
   };
 
   const calculateCartQuantity = (): number => {
-    return cartItems.reduce((sum, item) => sum + item.quantity, 0); 
+    return cartItems.reduce((sum, item) => sum + item.quantity, 0);
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart, calculateTotal, calculateCartQuantity, }}>
+    <CartContext.Provider
+      value={{ cartItems, addToCart, removeFromCart, clearCart, calculateTotal, calculateCartQuantity }}
+    >
       {children}
     </CartContext.Provider>
   );
