@@ -5,7 +5,6 @@ import { Header } from '../components/Header/Header';
 import { DetailedProduct} from '../types/Product';
 import { FeedbackMessage } from '../components/FeedbackMessage/FeedbackMessage';
 import { fetchData } from '../utilities/fetchData';
-// import { addToCart } from '../utilities/cartUtils';
 import styles from './ItemDetails.module.css';
 import { useCart } from '../context/CartContext';
 

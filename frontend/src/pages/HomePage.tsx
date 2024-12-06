@@ -29,7 +29,8 @@ export const HomePage = () => {
 
   if (loading) return <FeedbackMessage type='loading'/>;
   if (error) return <FeedbackMessage type='error'/>;
-
+  if (!products) return <FeedbackMessage type='error'/>;
+  
   return (
     <div>
       <div className={styles.headerdiv}>

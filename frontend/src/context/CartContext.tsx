@@ -31,10 +31,16 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const removeFromCart = (id: number) => {
+    const confirmClear = window.confirm("Are you sure you want to remove this item from your cart?");
+    if (!confirmClear) return;
+
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
   const clearCart = () => {
+    const confirmClear = window.confirm("Are you sure you want to clear the entire cart?");
+    if (!confirmClear) return;
+
     setCartItems([]);
   };
  
