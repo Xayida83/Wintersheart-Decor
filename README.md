@@ -1,8 +1,6 @@
 # Wintersheart Decor 
 **/Charlotta Lindberg**
 
-GITHUB: https://github.com/Xayida83/Wintersheart-Decor
-
 ___
 ## BACKEND
 The backend for the Wintersheart Decor project, built as a learning-focused implementation of an API using Node.js, following the MVC (Model-View-Controller) design pattern. The primary goal is to simulate working with a real API while reinforcing best practices for backend development.  
